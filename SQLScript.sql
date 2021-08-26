@@ -73,7 +73,7 @@ INSERT INTO Measure (name) VALUES('CUP'), ('TEASPOON'), ('TABLESPOON');
 
 INSERT INTO Ingredient (name) VALUES('artichokes'), ('veggie broth'), ('mushrooms'), ('onion'), ('olive oil'), ('sage'), ('garlic cloves'), ('lemon'), ('fettuccine');
 
-INSERT INTO Recipe (name, description, instructions) VALUES('Mushroom Artichoke Pasta', 'Mushroom pasta with a creamy artichoke sauce', 'Preheat oven to 400. Bring pot of water to a boil. Cook pasta to al dente. In a large skillet, saute mushrooms and onions over medium heat. In a blender, mix artichokes, sage, oil, broth, salt and pepper (to taste). Blend until smooth. Mix all ingredients and serve hot.');
+INSERT INTO Recipe ( UserId, Name, Description, Instructions, PostedDate) VALUES ( 1, 'Mushroom Artichoke Pasta', 'Mushroom pasta with a creamy artichoke sauce', 'Preheat oven to 400. Bring pot of water to a boil. Cook pasta to al dente. In a large skillet, saute mushrooms and onions over medium heat. In a blender, mix artichokes, sage, oil, broth, salt and pepper-to taste. Blend until smooth. Mix all ingredients and serve hot.', SYSDATETIME());
 
 INSERT INTO RecipeIngredient (RecipeId, IngredientId, MeasureId, amount) VALUES (1, 3, 1, 1);
 
