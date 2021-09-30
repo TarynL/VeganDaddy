@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useHistory, Link } from "react-router-dom";
 import { register } from "../modules/authManager";
-import Swag from "../images/Swag.png"
 
 
 export default function Register() {

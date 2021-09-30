@@ -30,6 +30,8 @@ namespace VeganDaddy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IUserProfileRepository, UserProfileRepository>();
+            services.AddTransient<IRecipeRepository, RecipeRepository>();
+
 
 
             var firebaseProjectId = Configuration.GetValue<string>("FirebaseProjectId");

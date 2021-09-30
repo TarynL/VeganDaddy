@@ -11,7 +11,7 @@ using VeganDaddy.Repositories;
 
 namespace VeganDaddy.Controllers
 {
-    //[Authorize]
+    [Authorize]
 
     [Route("api/[controller]")]
     [ApiController]
