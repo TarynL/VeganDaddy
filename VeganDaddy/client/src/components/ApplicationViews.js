@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "./Login";
+import RecipeList from "./recipes/RecipeList";
 import Register from "./Register";
 
 export default function ApplicationViews({ isLoggedIn }) {
@@ -8,7 +9,7 @@ export default function ApplicationViews({ isLoggedIn }) {
         <main className="main" >
             <Switch>
                 <Route path="/" exact>
-                    {isLoggedIn ? "Hello" : <Redirect to="/login" />}
+                    {isLoggedIn ? <RecipeList /> : <Redirect to="/login" />}
 
                 </Route>
 
