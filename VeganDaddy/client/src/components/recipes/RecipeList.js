@@ -19,7 +19,7 @@ const RecipeList = () => {
 
     return (
         <>
-            <Container className="recipelist ">
+            <Container className="recipe_list ">
                 <div className="row ">
                     {recipes.map((recipe) => (
                         <Recipe recipe={recipe} key={recipe.id} />
