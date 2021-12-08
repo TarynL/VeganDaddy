@@ -14,44 +14,40 @@ const Recipe = ({ recipe }) => {
 
     return (
         <>
-            <div>
-                <div class="recipe-card">
 
-                    <aside>
+            <div id="container">
 
-                        {/* <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/oatmeal.jpg" alt="Chai Oatmeal" /> */}
+                <div class="recipe-details">
+
+                    <h1>{recipe.title}</h1>
+                    <span class="hint-star star">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </span>
+
+                    <div class="information">{recipe.description}
+                        <p>
+                            <span><i class="fa fa-users" aria-hidden="true"> 1</i></span>
+                            <span><i class="fa fa-clock-o" aria-hidden="true"> 15 min</i></span></p>
+                    </div>
+
+                    <div class="instructions">
+                        <p>{recipe.instructions}</p>
+                    </div>
 
 
-                    </aside>
-
-                    <article>
-
-                        <h2>{recipe.title}</h2>
-
-                        <ul>
-                            <li><span class="icon icon-users"></span><span>1</span></li>
-                            <li><span class="icon icon-clock"></span><span>15 min</span></li>
-                            <li><span class="icon icon-level"></span><span>Beginner level</span></li>
-                            <li><span class="icon icon-calories"></span><span>248</span></li>
-                        </ul>
-
-                        <p>{recipe.description}</p>
-
-                        {/* <p class="ingredients"><span>Ingredients:&nbsp;</span>Milk, salt, coriander, cardamom, cinnamon, turmeric, honey, vanilla extract, regular oats, oat bran.</p> */}
-
-                    </article>
 
                 </div>
-                {/* <Card className="recipe_card" >
-                    <CardBody>
 
-                        <p><b>Title: </b></p>
-                        <p><b>Description: </b></p>
-                        <p><b>Instructions: </b>{recipe.instructions}</p>
-                        <p><b>Date Posted: </b>{handleDate()}</p>
-                        <p><b>Posted By: </b>{post.userProfile?.displayName}</p>
-                    </CardBody>
-                </Card > */}
+                <div class="recipe-image">
+
+                    <img src={recipe.imageUrl} />
+
+                </div>
+
             </div>
 
 
