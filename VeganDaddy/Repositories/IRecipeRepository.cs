@@ -8,5 +8,7 @@ namespace VeganDaddy.Repositories
         void Add(Recipe recipe);
        
         List<Recipe> GetAllRecipes();
+
+        Recipe GetRecipeById(int id);
     }
 }
