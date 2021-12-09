@@ -10,7 +10,10 @@ export default function ApplicationViews({ isLoggedIn }) {
             <Switch>
                 <Route path="/" exact>
                     {isLoggedIn ? <RecipeList /> : <Redirect to="/login" />}
+                </Route>
 
+                <Route path="/recipe" exact>
+                    {isLoggedIn ? <RecipeList /> : <Redirect to="/login" />}
                 </Route>
 
                 <Route path="/login">

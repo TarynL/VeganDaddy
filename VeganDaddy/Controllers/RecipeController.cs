@@ -30,11 +30,17 @@ namespace VeganDaddy.Controllers
         }
 
         // GET api/<RecipeController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var recipe = _recipeRepository.GetRecipeById(id);
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(recipe);
+        }
 
         //// POST api/<RecipeController>
         //[HttpPost]

@@ -42,6 +42,35 @@ namespace VeganDaddy.Repositories
             }
         }
 
+        public Recipe GetRecipeById(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                            SELECT r.Id, r.UserId, r.Title, r.Description, r.Instructions, r.ImageUrl as RecipeImage, r.PostedDate, r.IsDeleted
+                            FROM Recipe r
+                            WHERE r.Id = @id and r.IsDeleted = 0";
+
+                    DbUtils.AddParameter(cmd, "@id", id);
+                    var reader = cmd.ExecuteReader();
+
+                    Recipe recipe = null;
+
+                    if(reader.Read())
+                    {
+                        recipe = NewRecipeFromReader(reader);
+                    }
+
+                    reader.Close();
+
+                    return recipe;
+                }
+            }
+        }
+
         public void Add(Recipe recipe) 
         {
             using (var conn = Connection)
